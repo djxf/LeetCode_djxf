@@ -2,7 +2,17 @@ import java.util.Random;
 
 class Test2{
     public static void main(String[] args) {
+
+
+
+      for(int i=0;i<=100;i++){
+          if(i == 5){
+            break;
+          }
+          System.out.println("break 跳出循环");
+      }
       
+      //break:跳出循环 不包括if
       //StringBuilder:可变的字符序列，不同步。
       //StringBuffer:线程安全。
       //把一个数按照报数序列读出来。

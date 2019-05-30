@@ -5,21 +5,21 @@
  */
 class Solution {
     public int[] plusOne(int[] digits) {
-        //1 数组->数字
-        //2 数字+1
-        //3 数字->数组
+        for(int i=digits.length-1;i>=0;i--){
+            if(digits[i]!=9){
+                digits[i]++;
+                break;
+            }else{
+                digits[i] = 0;
+            }
+        }
 
-        //数组末位+1 如果大于9 倒数第二位加1 末位变为0 ......
-
-        digits[digits.length-1] += 1;
-        // for(int i = digits.length-1;i <= 0;i--){
-        //     digits[i] += 1;
-        //     if(digits[i] > 9){
-        //         digits[i] = 0;
-        //         digits[i-1] +=1;
-        //     }
-        // }
+        //加1后对首位为0进行处理
+        if(digits[0] == 0){
+            int[] res = new int[digits.length+1];
+            res[0] = 1;
+            return res;
+        }
         return digits;
-    }
 }
-
+}

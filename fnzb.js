@@ -47,21 +47,21 @@ function qdan(){
     
 }
 
-    //子线程点击确定 同时查找单子
-    threads.start(function(){
-        while(true){
-            //抢单
-            qdan();
-            //不进行判断直接点击确定
-            click(ok);
-            var re_cancle = text(cancle).findOne(50);//查找须设置超时时间否则陷入死循环
-            if(re_cancle.text()=="取消"){
-                click(ok);
-            }else{
-                log("未找到控件 但执行函数成功");
-            }
-        }
-    });
+//     //子线程点击确定 同时查找单子
+// threads.start(function(){
+//         while(true){
+//             //抢单
+//             qdan();
+//             //不进行判断直接点击确定
+//             click(ok);
+//             var re_cancle = text(cancle).findOne(50);//查找须设置超时时间否则陷入死循环
+//             if(re_cancle.text()=="取消"){
+//                 click(ok);
+//             }else{
+//                 log("未找到控件 但执行函数成功");
+//             }
+//         }
+// });
 
 
     isOpen = app.launchPackage(package_name);
