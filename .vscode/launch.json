@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Video",
+            "request": "launch",
+            "mainClass": "Video",
+            "projectName": "JAVA_cb17a83"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Vodio",
+            "request": "launch",
+            "mainClass": "Vodio",
+            "projectName": "JAVA_cb17a83"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test2",
+            "request": "launch",
+            "mainClass": "Test2",
+            "projectName": "JAVA_cb17a83"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "JAVA_cb17a83"
+        }
+    ]
+}
