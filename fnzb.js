@@ -12,23 +12,24 @@ var todo = "成功打开蜂鸟众包平台 即将为你抢单"
 var todo_exit = "检测到已退出平台 已停止抢单 抢单请重新打开"
 var package_name = "me.ele.crowdsource";
 var cancle = "取消";
+var qrqh = "确认取货";
 var isOpen;             //记录打开蜂鸟是否成功
 
 //点击抢单函数
 function qdan(){
      //查找须设置超时时间否则陷入死循环 id = ia
-     var bt_helpBuy = id(qdId).find(250);
+     var bt_helpBuy = id(qdId).find();
      for(var i=0;i<=bt_helpBuy.length-1;i++){
-         if(bt_helpBuy[i] !=null && bt_helpBuy[i].text != "待取货"){
+         if(bt_helpBuy[i] !=null && bt_helpBuy[i].text != qrqh && bt_helpBuy[i].text != "待取货" && bt_helpBuy[i].text != "确认送达" && bt_helpBuy[i].text != "待送达"){
              bt_helpBuy[i].click();
              device.vibrate(50);
              toast("已检测到抢单");
          }
      }
 
-     var bt_qd = id(qdId2).find(250);
+     var bt_qd = id(qdId2).find();
      for(var i=0;i<=bt_qd.length-1;i++){
-        if(bt_qd[i] !=null && bt_qd[i].text != "确认送达"){
+        if(bt_qd[i] !=null && bt_qd[i].text != qrqh && bt_qd[i].text != "确认送达" && bt_qd[i].text != "待取货" && bt_qd[i].text != "待送达"){
             bt_qd[i].click();
             device.vibrate(50);
             toast("已检测到抢单");
