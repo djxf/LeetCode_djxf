@@ -14,7 +14,7 @@ var package_name = "me.ele.crowdsource";    //应用包名
 var cancle = "取消";        //取消文字
 var qrqh = "确认取货";      //确认取货文字
 var sbdd = "上报到店";    //上报到店文字
-var dsd = "待送达";         //待送达文字
+var qrsd = "确认送达";         //待送达文字
 var isOpen;             //记录打开蜂鸟是否成功
  
 
@@ -23,7 +23,16 @@ function qdan(){
      var bt_helpBuy = id(qdId).find();
      for(var i=0;i<=bt_helpBuy.length-1;i++){
          if(bt_helpBuy[i] !=null && bt_helpBuy[i].text() === ""){
+            //查找文字 找到文字直接return 
+            var textK = text(sbdd).findOne(125);
+            var textK2 = text(qrqh).findOne(125);
+            var textK3 = text(qrsd).findOne(125);
+            if(textK != null || textK2 != null || textK3 != null){
+                return;
+            }
              bt_helpBuy[i].click();
+             sleep(100);
+             click(ok);
              device.vibrate(50);
              toast("已检测到抢单");
              log(bt_helpBuy[i].text())  //打印点击控件的文字确认bug所在
@@ -33,7 +42,14 @@ function qdan(){
      var bt_qd = id(qdId2).find();
      for(var i=0;i<=bt_qd.length-1;i++){
         if(bt_qd[i] !=null && bt_qd[i].text() === ""){
+              //查找文字 找到文字直接return 
+              var textK = text(sbdd).findOne(150);
+              if(textK != null){
+                  return;
+              }
             bt_qd[i].click();
+            sleep(100);
+            click(ok);
             device.vibrate(50);
             toast("已检测到抢单");
             log(bt_helpBuy[i].text())  //打印点击控件的文字确认bug所在
@@ -51,7 +67,4 @@ if(isOpen){
 while(true){
        //抢单
        qdan();
-       //直接点击确定
-       //click(ok);
-       var re_cancle = text(cancle).findOne(50);
 }
