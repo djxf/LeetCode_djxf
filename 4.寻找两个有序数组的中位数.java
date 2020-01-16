@@ -2,13 +2,14 @@
  * @lc app=leetcode.cn id=4 lang=java
  *
  * [4] 寻找两个有序数组的中位数
+ * 比较困难的题目二分法
  */
 
 // @lc code=start
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
             
-
+        
 
         int m = nums1.length;
         int n = nums2.length;
