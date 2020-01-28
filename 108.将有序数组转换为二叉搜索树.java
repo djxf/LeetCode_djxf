@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * @lc app=leetcode.cn id=108 lang=java
  *
@@ -14,7 +16,25 @@
  */
 class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
-        
+            if(nums == null || nums.length <= 0){
+                return null;
+            }
+
+            int len = nums.length;
+            int mid = len/2;
+            int midVla = nums[mid];
+            TreeNode root = new TreeNode(midVla);
+
+            if(mid > 0){
+                root.left = sortedArrayToBST(Arrays.copyOfRange(nums, 0,mid));
+            }
+
+            if(mid < len-1){
+                root.right = sortedArrayToBST(Arrays.copyOfRange(nums, mid+1,len));
+            }
+            
+            return root;
+
     }
 }
 
