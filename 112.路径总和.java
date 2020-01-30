@@ -27,9 +27,6 @@ class Solution {
         }
     
         return hasPathSum(root.left, sum-root.val)||hasPathSum(root.right, sum-root.val);
-    
-
-
     }
 }
 // @lc code=end
