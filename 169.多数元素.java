@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /*
  * @lc app=leetcode.cn id=169 lang=java
  *
@@ -7,7 +9,7 @@
 // @lc code=start
 class Solution {
     public int majorityElement(int[] nums) {
-        
+        Set<> set = new HashSet<>();
     }
 }
 // @lc code=end
