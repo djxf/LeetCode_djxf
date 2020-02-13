@@ -18,16 +18,23 @@ import java.util.List;
  */
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        //递归
-         
-        List<Integer> list = new ArrayList<>();
-        if(root == null){
-            return list;
-        }
-        list.add(root.val);
-        list.addAll(preorderTraversal(root.left));
-        list.addAll(preorderTraversal(root.right));
-        return list;
+        // 递归
+        // List<Integer> list = new ArrayList<>();
+        // if(root == null){
+        //     return list;
+        // }
+        // list.add(root.val);
+        // list.addAll(preorderTraversal(root.left));
+        // list.addAll(preorderTraversal(root.right));
+        // return list;
+
+        //申请一个栈
+        
+
+
+
+
+
     }
 }
 // @lc code=end
