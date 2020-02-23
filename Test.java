@@ -2,6 +2,9 @@
 public class test{
 
 public static void main(String[] args) {
-    System.out.println("hello world");
+    
+
+    char c = 'A';
+    System.out.println(6%10);
 }
 }
