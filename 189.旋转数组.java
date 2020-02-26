@@ -22,7 +22,6 @@ class Solution {
         reverse(nums, 0, nums.length-1);
         reverse(nums, 0, k%nums.length-1);
         reverse(nums, k%nums.length, nums.length-1);
-
     }
 
     //反转数组函数
