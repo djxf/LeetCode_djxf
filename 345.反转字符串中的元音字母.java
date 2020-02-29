@@ -16,6 +16,8 @@ class Solution {
             if(isVowel(temp) && isVowel(cs[end])){
                  cs[start] = cs[end];
                  cs[end] = temp;
+                 start++;
+                 end--;
             }
             if(!isVowel(temp)){
                 start++;
@@ -24,17 +26,22 @@ class Solution {
                 end--;
             }
         }
-        return cs.toString();
+        return String.valueOf(cs);
     }
 
     public boolean isVowel(char c){
         boolean is = false;
         switch(c){
             case 'a':
+            case 'A':
             case 'o':
+            case 'O':
             case 'e':
+            case 'E':
             case 'i':
+            case 'I':
             case 'u':
+            case 'U':
                 is = true;
                 break;
             default:
