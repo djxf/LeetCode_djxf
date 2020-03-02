@@ -7,24 +7,41 @@
 // @lc code=start
 class Solution {
     public String longestPalindrome(String s) {
-            String ans = "";
             int len = s.length();
-            int max = 0;
-            if(len == 1){
-                return s;
-            }
-            for(int i=0;i<len;i++){
-                for(int j=i+1;j <= len;j++){
-                    String test = s.substring(i, j);
-                    if(isHWString(test) && test.length() > max){
-                        ans = s.substring(i, j);
-                        max = test.length();
+            if(len < 2) return s;
+
+            //状态数组以及初始化
+            boolean[][] dp = new boolean[len][len];
+    
+            int maxlen = 1;
+            int start = 0;
+            for(int j = 1;j < len; j++){
+                for(int i = 0;i < j;i++){
+                    
+                    //判断
+                    if(s.charAt(i) == s.charAt(j)){
+                        if(j - i < 3){
+                            dp[i][j] = true;
+                        }else{
+                            dp[i][j] = dp[i+1][j-1];
+                        }
+
+                    }else{
+                        dp[i][j] = false;
+                    }
+
+                    if(dp[i][j]){
+                        int curLen = j - i +1;
+                        if(curLen > maxlen){
+                            maxlen = curLen;
+                            start = i;
+                        }
                     }
                 }
             }
-            return ans;
-        
-           
+            return s.substring(start, start+maxlen);
+
+
     }
 
 
