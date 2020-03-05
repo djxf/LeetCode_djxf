@@ -35,6 +35,7 @@ class Solution {
                 if(queue.peek().right != null) queue.offer(queue.peek().right);
                 subList.add(queue.poll().val);
             }
+        //向上还是向下没关系 处理数组的时候加个技巧就ok
         warpList.add(0,subList);
         }
         return warpList;
