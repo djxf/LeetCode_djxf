@@ -3,7 +3,11 @@ public class test{
 
 public static void main(String[] args) {
 
-        System.out.println(addStrings("9999","9999"));
+            int k = 1;
+            if((k--)==1){
+                System.out.println("true");
+                System.out.println(k);
+            }
     }
 
     public static String addStrings(String num1, String num2) {
