@@ -15,27 +15,24 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode preNode = null;
-        ListNode curNode = head;
-     
-        while(curNode != null){
-            ListNode nextNode = curNode.next;
-
-            //把当前节点的指向前一个节点
-            curNode.next = preNode;
-
-            //把当前节点的变为前一个节点。
-            preNode = curNode;
-
-            //当前节点指针移动到下一个节点
-            curNode = nextNode;
-        }
-        return preNode;
+        
+           ListNode preNode = null;
+           ListNode curNode = head;
+           while(curNode != null){
+               //保存下一个指针
+                ListNode nextNode = curNode.next;
+                //将当前的指针指向前一个结点
+                curNode.next = preNode;
+                preNode = curNode;
+                curNode = nextNode;
+           }
+           return preNode;
     }
 
 
     //递归
-    public ListNode reverseList(ListNode head){
+    public ListNode reverseList0(ListNode head){
+        //递归终止条件
         if(head == null || head.next == null){
             return head;
         }
