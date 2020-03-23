@@ -10,15 +10,15 @@ import java.util.List;
 // @lc code=start
 class Solution {
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> result = new ArrayList<>(rowIndex);
-        result.add(1);
-        for(int i = 0;i < rowIndex;i++){
-               
-            
-
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0;i <= rowIndex;i++){
+            list.add(i, 1);
+            for(int j = i - 1;j > 0;j--){
+                list.set(j, list.get(j-1)+list.get(j));
+            }
         }
-
-
+        return list;
+}
 }
 // @lc code=end
 
