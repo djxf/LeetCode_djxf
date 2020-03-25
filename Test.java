@@ -1,12 +1,18 @@
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
-public class test{
-
+public class test {
+    static List<String> list = new ArrayList<>();
+    static char[] cs = {'(',')'};
 public static void main(String[] args) {
 
-            
-            System.out.println(isSub('9', '1'));
-      
+    backTracing(3);
+    for(String item : list){
+        System.out.println(item);
     }
+}
 
     public static  boolean isInterleave(String s1, String s2, String s3) {
         int m = 0;
@@ -85,11 +91,7 @@ public static void main(String[] args) {
 	    return stringBuilder.length() != 0 ?  stringBuilder.toString() : "-1";
 	  }
 
-       //判断两个字符是否相差 1 
-    public static boolean isSub(char c1,char c2){
-        return Math.abs(c1 - c2) == 1;
-    }
-
+    
 
     //记录靓号以及价值的map
     Map<String,Integer> map = new LinkedHashMap<>();
@@ -105,6 +107,7 @@ public static void main(String[] args) {
             int value = v1 > v2 ? v1 : v2;
             map.put(strs[i],value);
         }
+        return string;
         
         //排序输出
         //...
@@ -164,5 +167,72 @@ public static void main(String[] args) {
     }
 
 
+
+
+    
+    public static List<String> generateParenthesis(int n) {
+            if(n < 1){
+                return list;
+            }
+            backTracing(n, "", 0);
+            return list;
+    }
+
+    //@param n 生成括号的对数
+    //@param strs 已生成的字符串
+    //@param k 本次该生成第几位
+    public static void backTracing(int n,String strs,int k){
+        if(!cutLeaf(strs)){
+            return;
+        }
+        
+        if(strs.length() == n * 2 && isValid(strs)){
+            list.add(strs);
+            return;
+        }
+        for(int i = 0;i < 2;i++){
+            strs += cs[i];
+            backTracing(n, strs, k + 1);
+            strs = strs.substring(0, strs.length()-1);
+            System.out.println(strs);
+        }
+        return;
+    }
+
+    //判断是否有效括号组合
+    private static boolean isValid(String strs) {
+        int count = 0;
+        for(char item : strs.toCharArray()){
+            if(item == '('){
+                count++;
+            }else if(item == ')'){
+                count--;
+                if(count < 0){
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+        return count == 0;
+    }
+
+    //剪枝判断已生成是否可以认定不成立
+    public static boolean cutLeaf(String strs){
+        int count = 0;
+        for(char item : strs.toCharArray()){
+            if(item == '('){
+                count++;
+            }else if(item == ')'){
+                count--;
+                if(count < 0){
+                    return false;
+                }
+            }else{
+                return true;
+            }
+        }
+        return true;
+    }
 
 }

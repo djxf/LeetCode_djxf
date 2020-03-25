@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Test3",
+            "request": "launch",
+            "mainClass": "Test3",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestDome2",
+            "request": "launch",
+            "mainClass": "TestDome2",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - dome",
             "request": "launch",
             "mainClass": "dome",
