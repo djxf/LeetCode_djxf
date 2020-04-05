@@ -14,7 +14,7 @@ class BubbleSort{
 
 
     //冒泡排序
-
+    //时间复杂度 o(n^2)
     public static int[] bubbleSort(int[] nums){
         if(nums == null || nums.length <= 1){
             return nums;
@@ -27,7 +27,6 @@ class BubbleSort{
             }
         }
         return nums;
-
     }
 
     private static void swap(int[] nums, int j, int i) {

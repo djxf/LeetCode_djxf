@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ParameterTypeDome",
+            "request": "launch",
+            "mainClass": "ParameterTypeDome",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ParameterType",
+            "request": "launch",
+            "mainClass": "ParameterType",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HashSetDome",
+            "request": "launch",
+            "mainClass": "HashSetDome",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test0331",
+            "request": "launch",
+            "mainClass": "Test0331",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BubbleSort",
             "request": "launch",
             "mainClass": "BubbleSort",
