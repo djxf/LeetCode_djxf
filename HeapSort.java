@@ -1,13 +1,13 @@
 
 public class HeapSort {
     public static void main(String[] args) {
-        int[] nums = {9,8,7,6,5,4,3,2,1};
+        int[] nums = {9,8,7,6,5,4,3,2,1,100};
         headSortNums(nums);
         for(int item : nums){
             System.out.print(item + " ");
         }
     }
-
+    //堆排序 平均时间复杂度 n*logN
     public static int[] headSortNums(int[] nums){
         if(nums == null || nums.length <= 0){
             return nums;
