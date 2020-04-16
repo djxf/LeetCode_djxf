@@ -32,7 +32,6 @@ class Solution {
             }
         }
         return list;
-        
     }
 }
 // @lc code=end
