@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ProxyDome",
+            "request": "launch",
+            "mainClass": "Proxy.ProxyDome",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - HeapSort",
             "request": "launch",
             "mainClass": "HeapSort",
