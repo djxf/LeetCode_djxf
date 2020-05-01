@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestDome",
+            "request": "launch",
+            "mainClass": "创建对象的方式.TestDome",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Dome010101010",
+            "request": "launch",
+            "mainClass": "Dome010101010",
+            "projectName": ".leetcode_e1894842"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ProxyDome",
             "request": "launch",
             "mainClass": "Proxy.ProxyDome",
